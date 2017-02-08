@@ -1,0 +1,60 @@
+<!--
+ **************************************************************************************************************************
+ * @file exampleJWPlayer.html
+ *
+ *  @brief HTML file for testing the Plugin for presenting Subtitles in EBU-TT-D format in JWPlayer 
+ *
+ *  HTML file that invokes plugin that read an XML file with subtitles in EBU-TT-D format and present them over the screen
+ *  Copyright 2016 GaTV. Universidad Politecnica de Madrid
+ *
+ *  @author Juan Pedro López Velasco 
+ *  @contact jlv@gatv.ssr.upm.es
+ *  @date 09.2016
+ *
+ *  For more information:
+ *  HBB4ALL: Hybrid Broadcast Broadband For ALL Project - http://www.hbb4all.eu/
+ *
+ **************************************************************************************************************************
+ -->
+<!DOCTYPE html>
+	<html hola_ext_inject="disabled">
+		<head>
+			<meta http-equiv="Content-type" content="text/xml; charset=UTF-8">
+			<title>Prueba Juanpe</title>
+			<!-- <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9"> -->
+			<script type="text/javascript" src="api6/jwplayer/jwplayer.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+			<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script> -->
+			<!--  <link href="http://assets3.desk.com/assets/portal_jqueryui_only-ae2078f5d9247e97c310caf0c453b7d9.css" media="screen" rel="stylesheet" type="text/css">-->
+			
+		</head>
+		<body>
+			
+			<div id="myElement"></div>
+			<script type="text/javascript">
+				jwplayer("myElement").setup({
+					displaytitle: true,
+					width: 1024,
+					height: 576,
+					sharing: {},
+					playlist: [{
+						file: "http://cdn-ondemand.rtp.pt/nas2.share/h264/512x384/p1599/p1599_1_20140901.mp4", // Agua de Mar
+						image: "images/rtpplay.jpg",
+						tracks: [
+									{ file:"subtitles/p1599_1_20140901.xml", label: "EBU-TT-D Portuguese", kind: "captions" } // Subtitulos EBU-TT-D PT
+						]
+					}],
+					plugins: {
+						"plugins/pluginjwplayersubtitlesebuttd.js":{
+						}
+					}
+				});
+			</script>
+			<br>
+		  <br>
+		  <!-- For more information, check the HBB4ALL website: 'http://www.hbb4all.eu' -->
+		  <button id="my-button" onClick="window.open('http://www.hbb4all.eu');">For more information:<br><img src="icons/hbb4all_logo.png" /></button>
+			
+				
+		</body>
+	</html>

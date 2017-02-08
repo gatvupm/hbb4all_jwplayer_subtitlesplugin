@@ -37,7 +37,7 @@ Moreover, we would love to hear which exciting apps you have created using the V
 
 ##License
 
-Free for non commercial use released under the GNU Lesser General Public License v2.0, See LICENSE file.
+Free for non commercial use released under the Apache License Version 2.0, See LICENSE file.
 
 Contact us for commercial use jlv@gatv.ssr.upm.es
 
